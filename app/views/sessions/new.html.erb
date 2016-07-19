@@ -1,5 +1,9 @@
 <%= simple_form_for User.new, url: {controller: :sessions, action: :create} do |f| %>
-  <%= f.input :email %>
-  <%= f.input :password %>
-  <%= f.button :submit, "login"%>
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <%= f.input :email, label_html: { class: "mdl-textfield__label" }, input_html: { class: "mdl-textfield__input" } %>
+  </div>
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <%= f.input :password, label_html: { class: "mdl-textfield__label" }, input_html: { class: "mdl-textfield__input" } %>
+  </div>
+  <%= f.button :submit, "login", class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored"%>
 <% end %>

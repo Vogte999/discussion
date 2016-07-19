@@ -47,4 +47,8 @@ group :development do
   gem 'simple_form'
 
   gem 'pg'
+
+  gem 'autoprefixer-rails', '~> 6.3', '>= 6.3.7'
+
+  gem 'material_design_lite-sass'
 end
