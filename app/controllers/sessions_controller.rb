@@ -14,6 +14,11 @@ class SessionsController < ApplicationController
     redirect_to '/sessions/new' and return
   end
 
+  def destroy
+    session[:id] = nil
+    redirect_to "/"
+  end
+
   private def user_params
     params.require(:user).permit(:email, :password)
   end

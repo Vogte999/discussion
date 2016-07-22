@@ -1,3 +1,24 @@
-<%= link_to "delete account", "#{session[:id]}", method: :delete, class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>
-
-<%= link_to "change account", "#{session[:id]}/edit", class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>
+<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+  <tbody>
+    <tr>
+      <td class="mdl-data-table__cell--non-numeric">Profile picture:</td>
+      <td><a target = "_blank" href = "https://en.gravatar.com/"><img src = <%= avatar %> ></a></td>
+    </tr>
+    <tr>
+      <td class="mdl-data-table__cell--non-numeric">Name:</td>
+      <td><%= @user.name %></td>
+    </tr>
+    <tr>
+      <td class="mdl-data-table__cell--non-numeric">Mail:</td>
+      <td><%= @user.email %></td>
+    </tr>
+    <tr>
+      <td class="mdl-data-table__cell--non-numeric">Edit account:</td>
+      <td><%= link_to "edit account", "#{session[:id]}/edit", class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %></td>
+    </tr>
+    <tr>
+      <td class="mdl-data-table__cell--non-numeric">Delete account:</td>
+      <td><%= link_to "delete account", "#{session[:id]}", method: :delete, class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %></td>
+    </tr>
+  </tbody>
+</table>

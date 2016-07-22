@@ -18,6 +18,8 @@ class UsersController < ApplicationController
     else
       redirect_to "/users/new"
     end
+  rescue
+    redirect_to "/users/new"
   end
   def edit
   end
