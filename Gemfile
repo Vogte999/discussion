@@ -50,3 +50,5 @@ end
   gem 'autoprefixer-rails', '~> 6.3', '>= 6.3.7'
 
   gem 'material_design_lite-sass'
+
+  gem 'tinymce-rails'

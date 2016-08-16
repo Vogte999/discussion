@@ -1,0 +1,15 @@
+<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+  <tbody>
+    <% @discussions.each do |disc| %>
+      <tr>
+        <td class="mdl-data-table__cell--non-numeric disc"><a href = <%="/the_discussions/#{disc.id}"%>><%= disc.topic %></a></td>
+      </tr>
+    <% end %>
+      <tr>
+        <td class="mdl-data-table__cell--non-numeric"><a href = "/the_discussions/new" class = "btn mdl-button mdl-js-button mdl-button--raised mdl-button--colored">new</a></td>
+      </tr>
+      <tr>
+        <td class="mdl-data-table__cell--non-numeric"><button id = "morediscs" class = "btn mdl-button mdl-js-button mdl-button--raised mdl-button--colored">more</button></td>
+      </tr>
+  </tbody>
+</table>
