@@ -1,15 +1,25 @@
-<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
-  <tbody>
-    <% @discussions.each do |disc| %>
-      <tr>
-        <td class="mdl-data-table__cell--non-numeric disc"><a href = <%="/the_discussions/#{disc.id}"%>><%= disc.topic %></a></td>
-      </tr>
-    <% end %>
-      <tr>
-        <td class="mdl-data-table__cell--non-numeric"><a href = "/the_discussions/new" class = "btn mdl-button mdl-js-button mdl-button--raised mdl-button--colored">new</a></td>
-      </tr>
-      <tr>
-        <td class="mdl-data-table__cell--non-numeric"><button id = "morediscs" class = "btn mdl-button mdl-js-button mdl-button--raised mdl-button--colored">more</button></td>
-      </tr>
-  </tbody>
-</table>
+<div id = "disccontainer">
+  
+  <%= simple_form_for TheDiscussion.new, remote: true do |f| %>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <%= f.input :topic, label_html: { class: "mdl-textfield__label" }, input_html: { class: "mdl-textfield__input" } %>
+    </div>
+    <%= f.button :submit, class: "newDisc mdl-button mdl-js-button mdl-button--raised mdl-button--colored"%>
+  <% end %>
+
+  <% if @discussions %>
+    <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+      <tbody id = "append">
+        <% @discussions.each do |disc| %>
+          <tr>
+            <td class="mdl-data-table__cell--non-numeric disc"><a href = <%="/the_discussions/#{disc.id}"%>><%= disc.topic %></a></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <button id = "morediscs" class = "btn mdl-button mdl-js-button mdl-button--raised mdl-button--colored">more</button>
+
+  <% end %>
+
+</div>
